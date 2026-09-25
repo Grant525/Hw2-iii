@@ -77,7 +77,7 @@ int Uarray2_size(T uarray2)
 * Expects: The 2D array is not empty (array is not null)
 *
 */
-void *Uarray2_at (T uarray2, unsigned int width, unsigned int height)
+void *Uarray2_at(T uarray2, unsigned int width, unsigned int height)
 
 /* uarray2_map_col_major
 * Summary: Maps an apply function to each element in the array row by row 
@@ -91,7 +91,7 @@ void *Uarray2_at (T uarray2, unsigned int width, unsigned int height)
 * All rows * are the same length as each other. Apply() takes in an array and returns
 * some value. 
 */
-void Uarray2_map_col_major (T uarray2, 
+void Uarray2_map_col_major(T uarray2, 
         void apply((int col, int row, T uarray2, void *elem, void *cl)),
         *cl)
 
@@ -108,20 +108,20 @@ void Uarray2_map_col_major (T uarray2,
 * All rows * are the same length as each other. Apply() takes in an array and returns
 * some value. 
 */
-void Urray2_map_row_major (T uarray2, 
+void Urray2_map_row_major(T uarray2, 
         void apply((int col, int row, T uarray2, void *elem, void *cl)),
         *cl)
 
 /* uarray2_free
 * Summary: Deallocates all of the allocated memory for the 2D array.
 * 
-* Parameters: T array: Pointer to the 2D array
+* Parameters: T array: Pointer to the pointer 2D array
 *
 * Return: nothing
 *
 * Expects: The 2D array is not empty (array is not null) and has allocated memory. 
 */
-void Urray2_free(T uarray2)
+void Urray2_free(T *uarray2)
 
 #undef T
 #endif
