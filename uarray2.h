@@ -33,8 +33,8 @@ T Urray2_new(unsigned int width, unsigned int height, unsigned int size)
 *
 * Return: Returns an integer representing the length of each row in the array 
 *
-* Expects: The 2D array is not empty. All columns are the same length as each
-*          other. All rows are the same length as each other. 
+* Expects: The 2D array is not empty (array is not null). All columns are the
+*       same length as each other. All rows are the same length as each other. 
 */
 int Uarray2_width(T uarray2)
 
@@ -46,8 +46,8 @@ int Uarray2_width(T uarray2)
 *
 * Return: Returns an integer representing the number of rows in the array
 *
-* Expects: The 2D array is not empty.  All columns are the same length as each
-*         other. All rows are the same length as each other. 
+* Expects: he 2D array is not empty (array is not null). All columns are the
+*       same length as each other. All rows are the same length as each other. 
 */
 int Uarray2_height(T uarray2)
 
@@ -59,7 +59,6 @@ int Uarray2_height(T uarray2)
 * Return: Returns an integer representing the size of each element in the array
 *
 * Expects: The 2D array is not empty (array is not null)
-*
 */
 int Uarray2_size(T uarray2)
 
@@ -75,7 +74,6 @@ int Uarray2_size(T uarray2)
 *        and height (x,y)
 * 
 * Expects: The 2D array is not empty (array is not null)
-*
 */
 void *Uarray2_at(T uarray2, unsigned int width, unsigned int height)
 
@@ -83,7 +81,7 @@ void *Uarray2_at(T uarray2, unsigned int width, unsigned int height)
 * Summary: Maps an apply function to each element in the array row by row 
 * 
 * Parameters: T array: pointer to the 2D array
-*       Apply () function 
+*       apply(): function being applied to each element in the 2D array
 *	    *cl: pointer to bool that checks invariants
 * Return: Nothing
 *
@@ -99,7 +97,7 @@ void Uarray2_map_col_major(T uarray2,
 * Summary: Maps an apply function to each element in the array column by column 
 * 
 * Parameters: T array: pointer to the 2D array
-*       Apply () function 
+*       apply(): function being applied to each element in the 2D array
 *	    *cl: pointer to bool that checks invariants
 *
 * Return: Nothing

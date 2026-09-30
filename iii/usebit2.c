@@ -17,7 +17,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#include <bit2.h>
+#include "bit2.h"
 
 const int DIM1 = 5;
 const int DIM2 = 7;
@@ -57,6 +57,7 @@ main(int argc, char *argv[])
         Bit2_put(test_array, DIM1 - 1, DIM2 - 1, MARKER);
         /* Note: &= means logical (boolean) AND of the condition
            on the right with the existing OK. OK is updated. */
+
         OK &= (Bit2_get(test_array, DIM1 - 1, DIM2 - 1) == MARKER);
 
         x = Bit2_put(test_array, DIM1 - 1, DIM2 - 1, 0);

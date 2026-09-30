@@ -17,7 +17,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#include <uarray2.h>
+#include "uarray2.h"
 
 typedef long number;
 
@@ -50,12 +50,12 @@ main(int argc, char *argv[])
         UArray2_T test_array;
         bool OK = true;
 
+        (void)OK;
         test_array = UArray2_new(DIM1, DIM2, ELEMENT_SIZE);
 
         OK = (UArray2_width(test_array) == DIM1) &&
              (UArray2_height(test_array) == DIM2) &&
              (UArray2_size(test_array) == ELEMENT_SIZE);
-
 
         /* Note: we are only setting a value on the corner of the array */
         *((number *)UArray2_at(test_array, DIM1 - 1, DIM2 - 1)) = MARKER;

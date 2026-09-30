@@ -55,7 +55,6 @@ all: sudoku unblackedges my_useuarray2 my_usebit2
 
 
 ## Linking step (.o -> executable program)
-
 sudoku: sudoku.o uarray2.o
 	$(CC) $(LDFLAGS) $^ -o $@ $(LDLIBS)
 
@@ -67,6 +66,13 @@ my_useuarray2: useuarray2.o uarray2.o
 
 my_usebit2: usebit2.o bit2.o
 	$(CC) $(LDFLAGS) $^ -o $@ $(LDLIBS)
+	
+##delete these later
+uarray2: uarray2.o
+	$(CC) $(LDFLAGS) $^ -o $@ $(LDLIBS)
+bit2: bit2.o
+	$(CC) $(LDFLAGS) $^ -o $@ $(LDLIBS)
+
 
 
 clean:
